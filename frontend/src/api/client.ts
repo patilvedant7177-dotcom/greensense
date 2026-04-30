@@ -1,7 +1,8 @@
 // TODO: Implement API client functions
 import type { SolarData, WeatherData } from '../types';
 
-const API_URL = import.meta.env.VITE_API_URL || '';
+const VITE_API_URL = import.meta.env.VITE_API_URL || '';
+const API_URL = (import.meta.env.PROD && VITE_API_URL.includes('localhost')) ? '' : VITE_API_URL;
 
 export const solarApi = {
   async getSolarData(lat: number, lon: number): Promise<SolarData> {

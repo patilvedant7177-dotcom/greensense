@@ -31,7 +31,8 @@ import { PageShell } from '../components/ui/PageShell'
 
 const STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty'
 const TOTAL_STEPS = 4
-const API_URL = import.meta.env.VITE_API_URL || ''
+const VITE_API_URL = import.meta.env.VITE_API_URL || ''
+const API_URL = (import.meta.env.PROD && VITE_API_URL.includes('localhost')) ? '' : VITE_API_URL
 
 const panelPresets = {
   waaree: {
