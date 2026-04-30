@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 
+import type { RealtimePostgresChangesPayload } from '@supabase/supabase-js'
+
 import { supabase } from '../lib/supabase'
 import type { TelemetryReading } from '../types'
 
@@ -24,7 +26,7 @@ export const useRealtimeReadings = (panelId: string) => {
           table: 'telemetry_readings',
           filter: `panel_id=eq.${panelId}`,
         },
-        (payload) => {
+        (payload: RealtimePostgresChangesPayload<TelemetryReading>) => {
           const newReading = payload.new as TelemetryReading
 
           queryClient.setQueryData<TelemetryReading[]>(
@@ -40,7 +42,7 @@ export const useRealtimeReadings = (panelId: string) => {
           )
         },
       )
-      .subscribe((status) => {
+      .subscribe((status: string) => {
         setIsActive(status === 'SUBSCRIBED')
       })
 
