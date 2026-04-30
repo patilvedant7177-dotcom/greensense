@@ -1,10 +1,7 @@
 fastapi
-uvicorn[standard]
 pvlib
 pandas
 numpy
-scikit-learn
 httpx
 supabase==2.22.4
 python-dotenv
-pytest
