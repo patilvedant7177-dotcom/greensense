@@ -2,7 +2,7 @@
   "functions": {
     "api/*.py": {
       "maxDuration": 10,
-      "excludeFiles": "{frontend/**,node_modules/**,backend/tests/**,**/__pycache__/**,**/*.pyc,README.md,STRUCTURE.md,.env*,.venv/**}"
+      "excludeFiles": "frontend/**|node_modules/**|backend/tests/**|**/__pycache__/**|**/*.pyc|README.md|STRUCTURE.md|.env*|.venv/**"
     }
   },
   "rewrites": [

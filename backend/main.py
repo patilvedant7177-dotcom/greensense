@@ -25,7 +25,7 @@ except Exception as exc:
 
 from backend.engine.diagnostics import correlate_faults, diagnose
 from backend.engine.suggestions import generate_suggestions
-from backend.engine.pvlib_engine import calculate_daily_profile, calculate_expected
+from backend.engine.solar_engine import calculate_daily_profile, calculate_expected
 from backend.schemas import AnalysisResult, ForecastDay, ForecastPoint, OutputInput, PanelConfig
 from backend.services.weather import get_current_weather, get_hourly_forecast
 from backend.app.routers import solar, weather
