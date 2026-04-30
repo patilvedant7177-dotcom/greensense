@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text: #111111;
+  --text-h: #000000;
+  --bg: #FCFBF7;
+  --border: #E8E7E0;
+  --accent: #FACC15;
+  --accent-bg: rgba(250, 204, 21, 0.1);
+  --accent-border: rgba(250, 204, 21, 0.5);
+  --shadow: rgba(0, 0, 0, 0.04) 0px 8px 24px;
+  --shadow-hover: rgba(0, 0, 0, 0.08) 0px 12px 32px;
+
+  --sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  --heading: 'Outfit', system-ui, -apple-system, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+}
+
+/* Card Hover Animation */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+}
+
+/* Typography Improvements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: -0.02em;
+}
+
+.font-heading {
+  font-family: var(--heading);
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+/* Custom Animations */
+@keyframes bounce-slow {
+
+  0%,
+  100% {
+    transform: translateY(-5%);
+  }
+
+  50% {
+    transform: translateY(5%);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+@keyframes bounce-slow-delayed {
+
+  0%,
+  100% {
+    transform: translateY(5%);
+  }
+
+  50% {
+    transform: translateY(-5%);
+  }
+}
+
+.animate-bounce-slow-delayed {
+  animation: bounce-slow-delayed 4.5s ease-in-out infinite;
+}
